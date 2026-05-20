@@ -23,7 +23,7 @@
         }
 
         .card {
-            max-width: 500px;
+            max-width: 550px;
             width: 100%;
             background: rgba(255, 250, 252, 0.96);
             backdrop-filter: blur(2px);
@@ -85,38 +85,39 @@
             margin-top: 10px;
         }
 
+        /* 回忆库板块 - 放大了 */
         .memory-box {
             background: #fffbfd;
             border-radius: 48px;
-            padding: 22px 20px;
+            padding: 32px 28px;
             margin: 28px 0 20px;
             border: 1px solid #ffe0ec;
         }
 
         .memory-label {
-            font-size: 13px;
-            font-weight: 470;
+            font-size: 20px;
+            font-weight: 600;
             color: #f2a9c2;
-            margin-bottom: 12px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .memory-text {
-            font-size: 20px;
-            font-weight: 480;
-            line-height: 1.4;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.5;
             color: #a86f82;
             background: #fff9fb;
-            padding: 12px 18px;
+            padding: 18px 22px;
             border-radius: 60px;
         }
 
         .memory-emoji {
-            font-size: 40px;
-            margin-top: 12px;
+            font-size: 52px;
+            margin-top: 18px;
         }
 
         .progress-area {
@@ -161,7 +162,7 @@
 <body>
 
 <div class="card">
-    <div class="cat-area" id="catIcon">🐱</div>
+    <div class="cat-area" id="catIcon"></div>
 
     <div class="countdown-ring">
         <div class="days-number" id="daysLeft">--</div>
@@ -171,7 +172,7 @@
 
     <div class="memory-box">
         <div class="memory-label">
-            <span>🐾</span>爱老婆<span>💍</span>
+            <span>🐾</span>one kiss one love<span>💍</span>
         </div>
         <div class="memory-text" id="memoryText">
            memory
@@ -197,10 +198,10 @@
 </div>
 
 <script>
-    // ✅ 修复：2026年6月15日见面（月份从0开始，5代表6月）
-    const MEET_DATE = new Date(2026, 5, 21);
+    // ✅ 见面日期：2026年6月15日（月份从0开始，5代表6月，15代表日期）
+    const MEET_DATE = new Date(2026, 5, 15);
     
-    // 回忆库：25天 → 0天
+    // 回忆库：25天 → 0天（你的内容全部保留）
     const MEMORY_BY_DAYS = {
         25: { text: "地球online 评分：★★★★★ 感觉这个世界烂透了 但有一个人叫snx蛮可爱的 这五颗星都是为她打的！", emoji: "💓🐈"  },
         24: { text: "好喜欢你 知不知道", emoji: "🎧" },
@@ -258,7 +259,7 @@
         if (daysLeft <= 0) return "snxigsy ";
         if (daysLeft <= 3) return "gsyisnx";
         if (daysLeft <= 7) return "🐱";
-        return "✨";
+        return "";
     }
 
     function getDaysUnitText(daysLeft) {
